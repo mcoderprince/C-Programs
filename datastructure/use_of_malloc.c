@@ -12,7 +12,7 @@ void main(){
   scanf("%d",&n);
   //allocate memory for number is interger
   ptr = (int *)malloc(n*sizeof(int));
-  if(){
+  if(ptr == NULL){
     printf("The required amount of memory is not available");
     exit(0);
   }
