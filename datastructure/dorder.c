@@ -15,14 +15,14 @@ To find the decending order if data is in assending
 
   printf("The elements in decending order\n");
 
-  printf("BY FIRST METHOD\n");
+
   j = 0;
   for (i = n-1; i >= 0; i--) {
       b[j] = a[i];
       j++;
   }
   for (j = 0; j<n; j++) {
-    printf("%d",b[j]);
+    printf("%d\n",b[j]);
   }
   return 0;
 }
