@@ -63,11 +63,10 @@ int create(){
 void display(int i){
   printf("(");
   while(i!= -1){
-    if(a[i].data == -1)
-
-    else
+    if(a[i].data != -1){
       printf("%d,",a[i].data);
     i = a[i].next;
+    }
   }
 printf(")");
 }
