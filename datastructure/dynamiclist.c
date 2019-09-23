@@ -55,7 +55,7 @@ void main(){
   list *node = (list *)malloc(sizeof(list));
   start = node;
 int choice;
-
+printf("1. Create \n 2. Display\n 3. Insert at first\n 4. Insert at last\n 0. exit\n");
 while(1){
   printf("\nEnter Your choice:");
   scanf("%d",&choice);
