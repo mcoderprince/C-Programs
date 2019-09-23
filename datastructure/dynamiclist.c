@@ -47,24 +47,7 @@ void insert_End(list *node){
   node = node->next;
 
 }
-//insert at any place
-void putNode(list *node){
-  int data,n;
-  printf("Enter the node after which you want to insert the data:");
-  scanf("%d",&data);
-  printf("Enter the node to be inseted:");
-  scanf("%d",&n);
-  while(node != newnode){
-    if(data == node->info){
-      newnode = (list *)malloc(sizeof(list));
-      newnode->info = n;
-      newnode->next = node->next;
-      node->next = newnode;
-      break;
-    }
-    node = node->next;
-  }
-}
+
 
 //Start of main function
 void main(){
@@ -89,9 +72,7 @@ while(1){
       case 4:
       insert_End(newnode);
       break;
-      case 5:
-         putNode(start);
-         break;
+
       case 0:
       exit(0);
   }
