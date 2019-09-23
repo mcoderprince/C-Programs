@@ -27,18 +27,46 @@ void create(list * node){
 void display(list *node){
   printf("Linked list\n");
   while(node != newnode){
-    printf("%d\n",node->info);
+    printf("%d->",node->info);
     node = node->next;
   }
 }
-void insert(list *node){
-  node = start->next;
+void insert_Start(list *first){
   New = (list *)malloc(sizeof(list));
-  New->next = node;
-  start = New;
   printf("Input the first node:");
   scanf("%d",&New->info);
+  New->next = first;
+  start = New;
 }
+//insert element at end of list
+void insert_End(list *node){
+  printf("Input the node:");
+  scanf("%d",&node->info);
+  newnode = (list *)malloc(sizeof(list));
+  node->next = newnode;
+  node = node->next;
+
+}
+//insert at any place
+void putNode(list *node){
+  int data,n;
+  printf("Enter the node after which you want to insert the data:");
+  scanf("%d",&data);
+  printf("Enter the node to be inseted:");
+  scanf("%d",&n);
+  while(node != newnode){
+    if(data == node->info){
+      newnode = (list *)malloc(sizeof(list));
+      newnode->info = n;
+      newnode->next = node->next;
+      node->next = newnode;
+      break;
+    }
+    node = node->next;
+  }
+}
+
+//Start of main function
 void main(){
 
   list *node = (list *)malloc(sizeof(list));
@@ -46,7 +74,7 @@ void main(){
 int choice;
 
 while(1){
-  printf("Enter Your choice:");
+  printf("\nEnter Your choice:");
   scanf("%d",&choice);
   switch (choice) {
     case 1:
@@ -56,13 +84,16 @@ while(1){
       display(start);
       break;
       case 3:
-      insert(start);
+      insert_Start(start);
       break;
+      case 4:
+      insert_End(newnode);
+      break;
+      case 5:
+         putNode(start);
+         break;
       case 0:
       exit(0);
   }
 }
-
-
-
 }
